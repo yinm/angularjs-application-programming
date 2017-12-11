@@ -1,1 +1,1 @@
-# angularjs-application-programming
+[AngularJS　アプリケーションプログラミング](http://gihyo.jp/book/2015/978-4-7741-7568-3)をやってます。
