@@ -1,3 +1,4 @@
 angular.module('myApp', [])
-  .controller('MyController',['$scope', function($scope) {
-  }]);
+  .controller('MyController',function($scope) {
+    $scope.myName = '佐藤';
+  });
