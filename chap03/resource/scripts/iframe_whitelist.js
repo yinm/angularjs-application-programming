@@ -1,3 +1,4 @@
+// 1st
 angular.module('myApp', [])
   .config(['$sceDelegateProvider', function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
