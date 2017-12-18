@@ -1,11 +1,12 @@
+// 1st
 angular.module('myApp', [])
   .controller('MyController', ['$scope', function($scope) {
-    var max = 140;
-    $scope.count = max;
+    const MAX = 140;
+    $scope.count = MAX;
     $scope.myStyle = { color: '#00f' };
 
     $scope.onchange = function() {
-      $scope.count = max - $scope.tweet.length;
+      $scope.count = MAX - $scope.tweet.length;
       if ($scope.count > 10) {
         $scope.myStyle = { color: '#00f' };
       } else if ($scope.count > 0) {
@@ -13,5 +14,5 @@ angular.module('myApp', [])
       } else {
         $scope.myStyle = { color: '#f00', fontWeight: 'bold' };
       }
-    }
+    };
   }]);
