@@ -12,13 +12,7 @@
     <label for="book">書籍：</label>
 
     <select id="book" name="book" ng-model="data.book"
-      ng-options="book.title for book in books">
-
-      <!--（2）選択値 as ラベルテキスト for 要素 in 配列-->
-      <!--
-      <select id="book" name="book" ng-model="data.book"
-        ng-options="book.isbn as book.title for book in books">
-      -->
+      ng-options="book.isbn as book.title for book in books">
 
       <option value="">以下から選択してください</option>
     </select>
