@@ -7,11 +7,11 @@
 <script src="scripts/order_func.js"></script>
 </head>
 <body ng-controller="MyController">
-<ul>
-  <li ng-repeat="member in members | orderBy : mySort">
   <!--<li ng-repeat="member in members | orderBy : mySort: true">-->
   <!--<li ng-repeat="member in members | orderBy : [mySort, 'old']">-->
-    {{member.name}}（{{member.role}}・{{member.old}}歳）
+<ul>
+  <li ng-repeat="member in members | orderBy : mySort">
+    {{member.name}} ({{member.role}}・{{member.old}}歳)
   </li>
 </ul>
 </body>

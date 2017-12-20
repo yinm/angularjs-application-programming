@@ -1,3 +1,4 @@
+// 1st
 angular.module('myApp', [])
   .controller('MyController', ['$scope', function($scope) {
     $scope.members = [
@@ -9,7 +10,6 @@ angular.module('myApp', [])
     ];
 
     $scope.mySort = function(member) {
-      //return Math.random();
       var roles = { '部長': 0, '課長': 1, '主任': 2, '担当': 3 };
       return roles[member.role];
     };
