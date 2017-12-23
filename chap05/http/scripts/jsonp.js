@@ -1,10 +1,9 @@
 angular.module('myApp', [])
-  .controller('MyController',
-    ['$scope', '$http', function($scope, $http) {
+  .controller('MyController', ['$scope', '$http', function($scope, $http) {
     $scope.onclick = function() {
       $http.jsonp('http://b.hatena.ne.jp/entry/jsonlite/',
         {
-          params : {
+          params: {
             callback: 'JSON_CALLBACK',
             url: $scope.url
           }
@@ -14,15 +13,15 @@ angular.module('myApp', [])
         var comments = [];
         $scope.count = data.count + '件';
         angular.forEach(data.bookmarks, function(value, index) {
-          if(value.comment !== '') {
-            comments.push(value.comment);
+          if (value.comment !== '') {
+            comments.push(value.comment)
           }
         });
         $scope.comments = comments;
       })
       .error(function(err) {
-        $scope.count = '（エラー）';
-        $scope.comments = [ '（エラー）' ];
+        $scope.count = '(エラー)';
+        $scope.comments = ['(エラー)'];
       });
     };
   }]);
