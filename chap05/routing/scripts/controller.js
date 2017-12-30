@@ -1,17 +1,15 @@
 angular.module('myApp')
-  .controller('MainController', ['$scope', ($scope) => {
-    $scope.msg = 'ようこそWINGSプロジェクトへ！';
-  }])
+  // .controller('MainController', ['$scope', ($scope) => {
+  //   $scope.msg = 'ようこそWINGSプロジェクトへ！';
+  // }])
 
-/*
   .controller('MainController',
-  ['$scope', '$location', function($scope, $location) {
-    $scope.msg = 'ようこそWINGSプロジェクトへ!';
-    $scope.onclick = function() {
-      $location.path('/articles/13');
-    };
+    ['$scope', '$location', ($scope, $location) => {
+      $scope.msg = 'ようこそWINGSプロジェクトへ！';
+      $scope.onclick = () => {
+        $location.path('/articles/13');
+      };
   }])
-*/
 
   .controller('ResolveController',
   ['$scope', 'CurrentPosition', ($scope, CurrentPosition) => {
