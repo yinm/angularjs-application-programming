@@ -1,11 +1,11 @@
-// 1st
+// 2nd
 angular.module('myApp', [])
   .controller('MyController', ['$scope', '$http', function($scope, $http) {
     $scope.onclick = function() {
       $http({
-        method: 'POST',
+        method: 'GET',
         url: 'http.php',
-        data: { name: $scope.name }
+        params: { name: $scope.name }
       })
       .success(function(data, status, headers, config) {
         $scope.result = data;
