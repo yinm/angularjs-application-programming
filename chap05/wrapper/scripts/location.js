@@ -4,10 +4,8 @@ angular.module('myApp', [])
      $locationProvider.hashPrefix('!');
   })
 */
-
-  .controller('MyController',
-    ['$scope', '$location', function($scope, $location) {
-    $scope.onclick = function() {
+  .controller('MyController', ['$scope', '$location', ($scope, $location) => {
+    $scope.onclick = () => {
       $location.url('articles?id=108#wings');
     };
 
@@ -17,4 +15,3 @@ angular.module('myApp', [])
     }
 */
   }]);
-
