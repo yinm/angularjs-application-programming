@@ -1,20 +1,20 @@
 angular.module('myApp', [])
-  .config(['$httpProvider', function($httpProvider) {
+  .config(['$httpProvider', ($httpProvider) => {
     $httpProvider.interceptors.push(
-      [ '$q', '$log', '$window', function ($q, $log, $window) {
+      ['$q', '$log', '$window', ($q, $log, $window) => {
         return {
-          'request': function(config) {
+          'request': (config) => {
             config.startTime = (new Date()).getTime();
             $log.info('request...');
             $log.info(config);
             return config;
           },
-          'requestError': function(rejection) {
+          'requestError': (rejection) => {
             $log.info('requestError...');
             $log.info(rejection);
             return $q.reject(rejection);
           },
-          'response': function(response) {
+          'response': (response) => {
             response.config.endTime = (new Date()).getTime();
             $log.info('Process Time(sec): ' + (response.config.endTime - response.config.startTime) / 1000);
 
@@ -22,7 +22,7 @@ angular.module('myApp', [])
             $log.info(response);
             return response;
           },
-          'responseError': function(rejection) {
+          'responseError': (rejection) => {
             if (rejection.status === 500) {
               $window.alert('$http service failed !');
               location.href = 'top.html';
@@ -34,18 +34,17 @@ angular.module('myApp', [])
         };
       }]);
   }])
-
-  .controller('MyController', ['$scope', '$http', function($scope, $http) {
-    $scope.onclick = function() {
+  .controller('MyController', ['$scope', '$http', ($scope, $http) => {
+    $scope.onclick = () => {
       $http({
         method: 'POST',
         url: 'http_interceptor.php',
-        data: { name: $scope.name }
+        data: { name: $scope.name },
       })
-      .success(function(data, status, headers, config){
+      .success((data, status, headers, config) => {
         $scope.result = data;
       })
-      .error(function(data, status, headers, config){
+      .error((data, status, headers, config) => {
         $scope.result = '!!通信に失敗しました!!';
       });
     };
