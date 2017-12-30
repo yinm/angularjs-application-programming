@@ -1,16 +1,18 @@
+// 2nd
 angular.module('myApp', [])
   .controller('MyController', ['$scope', '$http', function($scope, $http) {
     $scope.onclick = function() {
-      $http.jsonp('http://b.hatena.ne.jp/entry/jsonlite/',
+      $http.jsonp(
+        'http://b.hatena.ne.jp/entry/jsonlite/',
         {
           params: {
             callback: 'JSON_CALLBACK',
-            url: $scope.url
+            url: $scope.url,
           }
         }
       )
       .success(function(data) {
-        var comments = [];
+        let comments = [];
         $scope.count = data.count + '件';
         angular.forEach(data.bookmarks, function(value, index) {
           if (value.comment !== '') {
