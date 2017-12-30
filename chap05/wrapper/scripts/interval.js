@@ -1,11 +1,10 @@
 angular.module('myApp', [])
-  .controller('MyController',
-  ['$scope', '$interval', function($scope, $interval) {
-    var timer = $interval(function() {
+  .controller('MyController', ['$scope', '$interval', ($scope, $interval) => {
+    let timer = $interval(() => {
       $scope.current = new Date();
     }, 1000);
 
-    $scope.onclick = function() {
+    $scope.onclick = () => {
       $interval.cancel(timer);
     };
   }]);
