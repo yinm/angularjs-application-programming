@@ -1,22 +1,22 @@
-angular.module('myApp', [ 'ngRoute' ])
-  .config(function ($routeProvider) {
+angular.module('myApp', ['ngRoute'])
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainController'
+        controller: 'MainController',
       })
       .when('/books/:id', {
-        redirectTo: function(routeParams, path, search) {
-          return '/articles/' + (Number(routeParams.id) + 10000) ;
+        redirectTo: (routeParams, path, search) => {
+          return '/articles/' + (Number(routeParams.id) + 10000);
         }
       })
       .when('/articles/:id', {
         templateUrl: 'views/articles.html',
-        controller: 'ArticlesController'
+        controller: 'ArticlesController',
       })
-      .when('/search/:keyword*', {
+      .when('/search/:keyword', {
         templateUrl: 'views/search.html',
-        controller: 'SearchController'
+        controller: 'SearchController',
       })
       .otherwise({
         redirectTo: '/'
