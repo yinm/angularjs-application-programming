@@ -1,6 +1,6 @@
 angular.module('myApp')
-  .controller('MainController', ['$scope', function($scope) {
-    $scope.msg = 'ようこそWINGSプロジェクトへ!';
+  .controller('MainController', ['$scope', ($scope) => {
+    $scope.msg = 'ようこそWINGSプロジェクトへ！';
   }])
 
 /*
@@ -18,8 +18,7 @@ angular.module('myApp')
     $scope.pos = CurrentPosition;
   }])
 
-
-  .controller('ArticlesController', ['$scope', '$routeParams', function($scope, $routeParams) {
+  .controller('ArticlesController', ['$scope', '$routeParams', ($scope, $routeParams) => {
     $scope.id = $routeParams.id;
   }])
 
@@ -36,6 +35,6 @@ angular.module('myApp')
   }])
 */
 
-  .controller('SearchController', ['$scope', '$routeParams', function ($scope, $routeParams) {
+  .controller('SearchController', ['$scope', '$routeParams', ($scope, $routeParams) => {
     $scope.keyword = $routeParams.keyword;
   }]);
