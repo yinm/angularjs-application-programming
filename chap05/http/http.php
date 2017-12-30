@@ -1,6 +1,6 @@
 <?php
-
-$name = $_GET['name'];
+$data = json_decode(file_get_contents('php://input'), true);
+$name = $data['name'];
 
 if (empty($name)) {
     header('HTTP/1.1 500 Internal Server Error');

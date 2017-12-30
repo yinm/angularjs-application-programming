@@ -2,10 +2,15 @@
 angular.module('myApp', [])
   .controller('MyController', ['$scope', '$http', function($scope, $http) {
     $scope.onclick = function() {
-      $http.get(
-        'http.php',
-        { params: {name: $scope.name} }
-      )
+      $http({
+        method: 'POST',
+        url: 'http.php',
+        data: {
+          name: $scope.name,
+          fuga: 'fugaaaa',
+          hoge: 'hogeeeee',
+        },
+      })
       .success(function(data, status, headers, config) {
         $scope.result = data;
       })
