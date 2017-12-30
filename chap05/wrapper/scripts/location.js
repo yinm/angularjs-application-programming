@@ -9,9 +9,7 @@ angular.module('myApp', [])
       $location.url('articles?id=108#wings');
     };
 
-/*
     if ($location.path() === '/articles') {
-      console.log('id値：' + $location.search().id);
+      console.log('id: ' + $location.search().id);
     }
-*/
   }]);
