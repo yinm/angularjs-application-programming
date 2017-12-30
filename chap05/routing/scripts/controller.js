@@ -14,7 +14,7 @@ angular.module('myApp')
 */
 
   .controller('ResolveController',
-  ['$scope', 'CurrentPosition', function($scope, CurrentPosition) {
+  ['$scope', 'CurrentPosition', ($scope, CurrentPosition) => {
     $scope.pos = CurrentPosition;
   }])
 
