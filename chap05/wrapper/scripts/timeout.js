@@ -1,10 +1,10 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', '$timeout',  function($scope, $timeout) {
-    var timer = $timeout(function() {
+  .controller('MyController', ['$scope', '$timeout', ($scope, $timeout) => {
+    let timer = $timeout(() => {
       $scope.greeting = 'ようこそ、世界！';
     }, 10000);
 
-    $scope.onclick = function() {
+    $scope.onclick = () => {
       $timeout.cancel(timer);
     };
   }]);
