@@ -1,6 +1,7 @@
+// 2nd
 angular.module('myApp', [])
   .controller('MyController', ['$scope', '$timeout', '$log', '$q', ($scope, $timeout, $log, $q) => {
-    let asyncProcess = (value) => {
+    const asyncProcess = (value) => {
       let deferred = $q.defer();
       $timeout(() => {
         deferred.notify('asyncProcess');
