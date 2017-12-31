@@ -1,15 +1,15 @@
-angular.module('myApp', [ 'ngCookies' ])
-  .controller('MyController',
-  ['$scope', '$cookies', function($scope, $cookies) {
+angular.module('myApp', ['ngCookies'])
+  .controller('MyController', ['$scope', '$cookies', ($scope, $cookies) => {
     $scope.email = $cookies.get('email');
     $scope.record = true;
 
-    $scope.onclick = function() {
-      if($scope.record) {
-        var expire = new Date();
+    $scope.onclick = () => {
+      if ($scope.record) {
+        let expire = new Date();
         expire.setMonth(expire.getMonth() + 3);
+
         $cookies.put('email', $scope.email, {
-          expires: expire
+          expires: expire,
         });
       } else {
         $cookies.remove('email');
