@@ -18,10 +18,13 @@
   <li>iPhone／iPad開発ポケットリファレンス</li>
 </ul>
 <script>
-var result = [];
-var elm = angular.element(document.getElementById('php'));
-for(var prop in elm) {
-  if (angular.isFunction(elm[prop])) { result.push(prop); }
+let result = [];
+const elm = angular.element(document.getElementById('php'));
+
+for(let prop in elm) {
+  if (angular.isFunction(elm[prop])) {
+    result.push(prop);
+  }
 }
 console.log(result);
 </script>
