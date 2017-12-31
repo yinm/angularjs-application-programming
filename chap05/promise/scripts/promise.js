@@ -15,7 +15,7 @@ angular.module('myApp', [])
       return deferred.promise;
     };
 
-    asyncProcess('トクジロウ')
+    asyncProcess('')
       .then(
         (o_resolve) => {
           $log.info(o_resolve);
@@ -23,7 +23,7 @@ angular.module('myApp', [])
         },
         (o_reject) => {
           $log.info(o_reject);
-          return $q.reject(`** ${o_reject} **`);
+          return `** ${o_reject} **`;
         },
         (o_notify) => {
           $log.info(o_notify);
