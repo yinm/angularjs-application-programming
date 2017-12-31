@@ -5,18 +5,18 @@
 <title>AngularJS</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script>
-var $injector = angular.injector(['ng']);
-var $http = $injector.get('$http');
+const $injector = angular.injector(['ng']);
+const $http = $injector.get('$http');
 $http({
   method: 'GET',
-  url: 'injector.txt'
+  url: 'injector.txt',
 })
-.success(function(data, status, headers, config){
-  console.log(data);
-})
-.error(function(data, status, headers, config){
-  console.log('!!通信に失敗しました!!');
-}); 
+  .success((data, status, headers, config) => {
+    console.log(data);
+  })
+  .error((data, status, headers, config) => {
+    console.log('!!通信に失敗しました!!');
+  });
 </script>
 </head>
 <body>
