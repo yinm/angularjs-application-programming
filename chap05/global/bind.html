@@ -16,9 +16,7 @@ const obj = {
   }
 };
 
-document.getElementById('btn').addEventListener('click', obj.show, true);
-//document.getElementById('btn').addEventListener('click',
-//  angular.bind(obj, obj.show), true);
+document.getElementById('btn').addEventListener('click', angular.bind(obj, obj.show), true);
 </script>
 </body>
 </html>
