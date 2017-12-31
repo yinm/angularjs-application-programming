@@ -19,12 +19,22 @@ angular.module('myApp', [])
       .then(
         (o_resolve) => {
           $log.info(o_resolve);
+          return `** ${o_resolve} **`;
         },
         (o_reject) => {
           $log.info(o_reject);
+          return $q.reject(`** ${o_reject} **`);
         },
         (o_notify) => {
           $log.info(o_notify);
+        }
+      )
+      .then(
+        (o_resolve) => {
+          $log.info(o_resolve);
+        },
+        (o_reject) => {
+          $log.info(o_reject);
         }
       );
   }]);
