@@ -1,8 +1,8 @@
 angular.module('myApp', [])
-  .config(['$logProvider', function($logProvider) {
+  .config(['$logProvider', ($logProvider) => {
     $logProvider.debugEnabled(true);
   }])
-  .controller('MyController', ['$scope', '$log',  function($scope, $log) {
+  .controller('MyController', ['$scope', '$log', ($scope, $log) => {
     $log.debug('デバッグ');
     $log.error('エラー');
     $log.info('情報');
