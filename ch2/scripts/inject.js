@@ -1,4 +1,4 @@
-var My = function($scope, BookList) {
+const My = ($scope, BookList) => {
   $scope.books = BookList();
 };
 
