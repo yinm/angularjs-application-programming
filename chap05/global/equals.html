@@ -5,20 +5,28 @@
 <title>AngularJS</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script>
-var obj1 = {
+const obj1 = {
   name: '山田理央',
   sex: 'female',
-  family: [ 'トクジロウ', 'ウタ', 'ニンザブロウ' ],
-  toString : function() { /* メソッドの中身 */ },
+  family: [
+    'トクジロウ',
+    'ウタ',
+    'ニンザブロウ',
+  ],
+  toString: function() {},
   $other: 'hogehoge'
 };
 
-var obj2 = {
+const obj2 = {
   name: '山田理央',
   sex: 'female',
-  family: [ 'トクジロウ', 'ウタ', 'ニンザブロウ' ],
-  work : function() { /* メソッドの中身 */ }
-}
+  family: [
+    'トクジロウ',
+    'ウタ',
+    'ニンザブロウ',
+  ],
+  work: function() {},
+};
 
 console.log(angular.equals(obj1, obj2));
 console.log(angular.equals(['い', 'ろ', 'は'], ['い', 'ろ', 'は']));
