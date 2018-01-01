@@ -8,7 +8,6 @@ angular.module('myApp', [])
   }])
   .controller('ChildController', ['$scope', ($scope) => {
     $scope.onchild = () => {
-      $scope.value++;
-      //$scope.$parent.value++;
+      $scope.$parent.value++;
     }
   }]);
