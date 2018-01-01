@@ -4,9 +4,14 @@ angular.module('myApp', [])
     $scope.height = 0;
     $scope.area = 0;
 
-    $scope.$watch('base * height / 2', (newValue, oldValue, scope) => {
-      scope.area = newValue;
-    });
+    $scope.$watch(
+      () => {
+        return $scope.base * $scope.height / 2;
+      },
+      (newValue, oldValue, scope) => {
+        scope.area = newValue;
+      }
+    )
   }]);
 
 // angular.module('myApp', [])
