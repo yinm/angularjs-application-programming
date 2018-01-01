@@ -9,7 +9,7 @@ angular.module('myApp', [])
         length = 50;
       }
 
-      omission = omission || '...';
+      omission = omission || '!!!';
       if (value.length <= length) {
         return value;
       } else {
