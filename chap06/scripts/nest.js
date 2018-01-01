@@ -1,11 +1,10 @@
 angular.module('myApp', [])
-  .controller('ParentController', ['$scope', function($scope) {
+  .controller('ParentController', ['$scope', ($scope) => {
     $scope.value = 1;
 
-    $scope.onparent = function() {
+    $scope.onparent = () => {
       $scope.value++;
-    };
+    }
   }])
-  .controller('ChildController', ['$scope', function($scope) {
+  .controller('ChildController', ['$scope', ($scope) => {
   }]);
-
