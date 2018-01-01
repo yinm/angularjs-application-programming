@@ -8,13 +8,13 @@
 </head>
 <body>
 <div ng-controller="ParentController">
-  親スコープ：
-  {{value}}
+  親スコープ: {{value}}
   <button ng-click="onparent()">加算</button>
-  <hr />
+
+  <hr>
+
   <div ng-controller="ChildController">
-    子スコープ：
-    {{value}}
+    子スコープ: {{value}}
     <button ng-click="onchild()">加算</button>
   </div>
 </div>
