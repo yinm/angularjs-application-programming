@@ -1,28 +1,29 @@
 angular.module('myApp', [])
   .provider('MyLog', function() {
-    this.defaults = { logLevel : 4 };
-    this.$get = ['$log', function($log) {
-      var level = this.defaults.logLevel;
+    this.defaults = { loglevel: 4 };
+    this.$get = ['$log', ($log) => {
+      const level = this.defaults.loglevel;
+
       return {
-        error : function(message) {
+        error: (message) => {
           if (level > 0) { $log.error(message); }
         },
-        warn : function(message) {
+        warn: (message) => {
           if (level > 1) { $log.warn(message); }
         },
-        info : function(message) {
+        info: (message) => {
           if (level > 2) { $log.info(message); }
         },
-        debug : function(message) {
+        debug: (message) => {
           if (level > 3) { $log.debug(message); }
         }
-      };
-    }];
+      }
+    }]
   })
-  .config(['MyLogProvider', function(MyLogProvider) {
-    MyLogProvider.defaults.logLevel = 3;
+  .config(['MyLogProvider', (MyLogProvider) => {
+    MyLogProvider.defaults.loglevel = 3;
   }])
-  .controller('MyController', ['$scope', 'MyLog', function($scope, MyLog) {
+  .controller('MyController', ['$scope', 'MyLog', ($scope, MyLog) => {
     MyLog.error('エラー');
     MyLog.warn('警告');
     MyLog.info('情報');
