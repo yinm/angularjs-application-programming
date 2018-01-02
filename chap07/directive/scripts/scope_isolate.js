@@ -10,7 +10,7 @@ angular.module('myApp', [])
     }
   })
   .controller('MyController', ['$scope', ($scope) => {
-    $scope.data = {
+    $scope.mofumofu = {
       title: 'JavaScript本格入門',
       price: 2980,
       publish: '技術評論社',
