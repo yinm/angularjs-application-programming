@@ -1,19 +1,23 @@
 angular.module('myApp', [])
-  .directive('button', function() {
+  .directive('button', () => {
     return {
       restrict: 'E',
-      compile: function(element, attrs) {
+      compile: (element, attrs) => {
         element.addClass('btn');
         if (attrs.type) {
-          var data = { submit:'primary', reset:'warning', button:'default' };
-          element.addClass('btn-' + data[attrs.type]);
+          const data = {
+            submit: 'primary',
+            reset: 'warning',
+            button: 'default',
+          };
+          element.addClass(`btn-${data[attrs.type]}`);
         }
+
         if (attrs.block === 'block') {
           element.addClass('btn-block');
         }
       }
-    };
+    }
   })
-
-  .controller('MyController', ['$scope', function($scope) {
+  .controller('MyController', ['$scope', ($scope) => {
   }]);
