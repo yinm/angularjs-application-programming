@@ -1,11 +1,11 @@
 angular.module('myApp', [])
-  .directive('myScope', function() {
+  .directive('myScope', () => {
     return {
       restrict: 'E',
       replace: true,
       scope: true,
-      controller: [ '$scope', function($scope) {
-        $scope.onchild = function() {
+      controller: ['$scope', ($scope) => {
+        $scope.onchild = () => {
           $scope.value++;
         };
       }],
@@ -13,9 +13,9 @@ angular.module('myApp', [])
         '{{value}}</div>'
     }
   })
-  .controller('MyController', ['$scope', function($scope) {
+  .controller('MyController', ['$scope', ($scope) => {
     $scope.value = 10;
-    $scope.onparent = function() {
+    $scope.onparent = () => {
       $scope.value++;
     };
   }]);
