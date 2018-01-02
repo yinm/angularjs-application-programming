@@ -1,10 +1,9 @@
 angular.module('myApp', [])
-  .directive('myHello', function() {
+  .directive('myHello', () => {
     return {
       restrict: 'E',
-      templateUrl: 'helloTemplate2.html'
+      templateUrl: 'helloTemplate2.html',
     }
   })
-
-  .controller('MyController', ['$scope', function($scope) {
+  .controller('MyController', ['$scope', ($scope) => {
   }]);
