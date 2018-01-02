@@ -1,11 +1,10 @@
 angular.module('myApp', [])
-  .directive('myHelloName', function() {
+  .directive('myHelloName', () => {
     return {
       restrict: 'E',
       transclude: true,
-       template: '<div>こんにちは、<span ng-transclude></span>さん！</div>'
+        template: '<div>こんにちは、<span ng-transclude></span>さん！</div>'
     }
   })
-
-  .controller('MyController', ['$scope', function($scope) {
+  .controller('MyController', ['$scope', ($scope) => {
   }]);
