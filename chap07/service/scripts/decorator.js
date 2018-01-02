@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .config(['$provide', ($provide) => {
     $provide.decorator('$log', ['$delegate', '$window', ($delegate, $window) => {
@@ -10,4 +11,4 @@ angular.module('myApp', [])
   .controller('MyController', ['$scope', '$log', ($scope, $log) => {
     $log.error('エラー');
     $log.warn('警告');
-  }])
+  }]);
