@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .directive('myBook', () => {
     return {
@@ -10,7 +11,7 @@ angular.module('myApp', [])
     }
   })
   .controller('MyController', ['$scope', ($scope) => {
-    $scope.mofumofu = {
+    $scope.data = {
       title: 'JavaScript本格入門',
       price: 2980,
       publish: '技術評論社',
