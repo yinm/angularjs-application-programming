@@ -4,6 +4,7 @@ angular.module('myApp', [])
       restrict: 'E',
       compile: (element, attrs) => {
         element.addClass('btn');
+
         if (attrs.type) {
           const data = {
             submit: 'primary',
@@ -16,7 +17,7 @@ angular.module('myApp', [])
         if (attrs.block === 'block') {
           element.addClass('btn-block');
         }
-      }
+      },
     }
   })
   .controller('MyController', ['$scope', ($scope) => {
