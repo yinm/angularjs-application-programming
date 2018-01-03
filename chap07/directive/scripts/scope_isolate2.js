@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .directive('myHello', () => {
     return {
@@ -16,5 +17,5 @@ angular.module('myApp', [])
     $scope.greeting = 'おはよう';
     $scope.onclick = () => {
       $window.alert('クリックされました！');
-    }
+    };
   }]);
