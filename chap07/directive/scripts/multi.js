@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-  .directive('myRandomDecorate', function() {
+  .directive('myRandomDecorate', () => {
     return {
       restrict: 'A',
       multiElement: true,
@@ -7,15 +7,15 @@ angular.module('myApp', [])
         color: '@',
         bgcolor: '@',
       },
-      compile: function(elements, attrs) {
-        var selectColor = function(colors) {
-          var list = colors.split(',');
-          return list[Math.floor(Math.random() * list.length)]
+      compile: (elements, attrs) => {
+        const selectColor = (colors) => {
+          const list = colors.split(',');
+          return list[Math.floor(Math.random() * list.length)];
         };
-        return function(scope, elements, attrs) {
-          angular.forEach(elements, function(elm) {
+        return (scope, elements, attrs) => {
+          angular.forEach(elements, (elm) => {
             if (elm.nodeType !== Node.ELEMENT_NODE) { return; }
-            var e = angular.element(elm);
+            let e = angular.element(elm);
             if (attrs.color) {
               e.css('color', selectColor(attrs.color));
             }
@@ -24,9 +24,8 @@ angular.module('myApp', [])
             }
           });
         }
-      }
+      },
     };
   })
-
-  .controller('MyController', ['$scope', function($scope) {
+  .controller('MyController', ['$scope', ($scope) => {
   }]);
