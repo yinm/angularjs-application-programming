@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .directive('myScope', () => {
     return {
@@ -10,7 +11,7 @@ angular.module('myApp', [])
         };
       }],
       template: '<div><button ng-click="onchild()">加算</button>' +
-        '{{value}}</div>'
+        '{{value}}</div>',
     }
   })
   .controller('MyController', ['$scope', ($scope) => {
