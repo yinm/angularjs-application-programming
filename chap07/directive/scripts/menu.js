@@ -1,9 +1,9 @@
 angular.module('myApp', [])
-  .directive('myMenu', ['$compile', function($compile) {
+  .directive('myMenu', ['$compile', ($compile) => {
     return {
       restrict: 'E',
       scope: {
-        src: '='
+        src: '=',
       },
       template:   '<ul class="menu">'
                 + '<li>'
@@ -13,24 +13,25 @@ angular.module('myApp', [])
                 + '</li>'
                 + '</ul>',
       replace: true,
-      compile: function(element, attrs) {
-        var template = '<li ng-repeat="item in src.subs">'
-                     + '<my-menu src="item"></my-menu>'
-                     + '</li>';
-        return function(scope, element, attrs) {
-          var link =  $compile(template);
-          link(scope, function(cloned){
+      compile: (element, attrs) => {
+        const template = '<li ng-repeat="item in src.subs">'
+                       + '<my-menu src="item"></my-menu>'
+                       + '</li>';
+
+        return (scope, element, attrs) => {
+          const link = $compile(template);
+          link(scope, (cloned) => {
             element.find('div').append(cloned);
           });
 
-          scope.ontoggle = function() {
+          scope.ontoggle = () => {
             scope.show = !scope.show;
-          }
+          };
         };
-      }
+      },
     };
   }])
-  .controller('MyController', ['$scope', function($scope) {
+  .controller('MyController', ['$scope', ($scope) => {
     $scope.menu = {
       title: 'ホーム',
       path: 'index.html',
@@ -43,16 +44,30 @@ angular.module('myApp', [])
           title: '記事一覧',
           path: 'articles.html',
           subs: [
-            { title: 'JavaScript関連', path: 'js.html',
+            {
+              title: 'JavaScript関連',
+              path: 'js.html',
               subs: [
-                { title: 'jQuery', path: 'jq.html'},
-                { title: 'AngularJS', path: 'angular.html'}
-              ]
+                {
+                  title: 'jQuery',
+                  path: 'jq.html',
+                },
+                {
+                  title: 'AngularJS',
+                  path: 'angular.html',
+                }
+              ],
             },
-            { title: 'Java関連', path: 'java.html'},
-            { title: 'データベース関連', path: 'db.html'}
-          ]
+            {
+              title: 'Java関連',
+              path: 'java.html',
+            },
+            {
+              title: 'データベース関連',
+              path: 'db.html',
+            },
+          ],
         },
-      ]
+      ],
     };
   }]);
