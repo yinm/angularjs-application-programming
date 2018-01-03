@@ -14,10 +14,11 @@ angular.module('myApp', [])
         scope.onenter = () => {
           scope.src = scope.postSrc;
         };
+
         scope.onleave = () => {
-          scope.src = scope.preSrc
+          scope.src = scope.preSrc;
         };
-      }
+      },
     }
   })
   .controller('MyController', ['$scope', ($scope) => {
