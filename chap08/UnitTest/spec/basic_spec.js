@@ -1,11 +1,10 @@
-describe('nl2brフィルターのテスト', function() {
+describe('nl2brフィルターのテスト', () => {
   beforeEach(module('myApp.filter'));
 
-  it('改行付き文字列を変換する', inject(function($filter) {
-    var str = 'こんにちは、世界！\nこんにちは、赤ちゃん！';
-    var result = 'こんにちは、世界！<br />こんにちは、赤ちゃん！';
+  it('改行付き文字列を置換する', inject(function($filter) {
+    const str = 'こんにちは、世界！\nこんにちは、赤ちゃん！';
+    const actual = 'こんにちは、世界！<br />こんにちは、赤ちゃん！';
 
-    var nl2br = $filter('nl2br');
-    expect(nl2br(str)).toEqual(result);
+    expect($filter('nl2br')(str)).toEqual(actual);
   }));
 });
