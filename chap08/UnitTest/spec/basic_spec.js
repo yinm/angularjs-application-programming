@@ -5,6 +5,7 @@ describe('nl2brフィルターのテスト', () => {
     const str = 'こんにちは、世界！\nこんにちは、赤ちゃん！';
     const actual = 'こんにちは、世界！<br />こんにちは、赤ちゃん！';
 
-    expect($filter('nl2br')(str)).toEqual(actual);
+    const nl2br = $filter('nl2br');
+    expect(nl2br(str)).toEqual(actual);
   }));
 });
