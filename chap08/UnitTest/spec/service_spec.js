@@ -1,17 +1,17 @@
-describe('FigureServiceサービスのテスト', function() {
-  var FigureService;
+describe('FigureServiceサービスのテスト', () => {
+  let FigureService;
 
   beforeEach(module('myApp.service'));
 
-  beforeEach(inject(function(_FigureService_){
+  beforeEach(inject(function(_FigureService_) {
     FigureService = _FigureService_;
   }));
 
-  it('三角形の面積を求める', function() {
+  it('三角形の面積を求める', () => {
     expect(FigureService.triangle(5, 10)).toEqual(25);
   });
 
-  it('台形の面積を求める', function() {
+  it('台形の面積を求める', () => {
     expect(FigureService.trapezoid(5, 10, 4)).toEqual(30);
   });
 
