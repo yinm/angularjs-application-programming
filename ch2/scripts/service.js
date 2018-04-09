@@ -1,6 +1,7 @@
+// 2nd
 angular.module('myApp', [])
   .controller('MyController', function($scope, BookList) {
-    $scope.books = BookList();
+    $scope.books = BookList()
   })
   .value('BookList', function() {
     return [
@@ -60,5 +61,5 @@ angular.module('myApp', [])
         publish: '技術評論社',
         published: new Date(2013, 10, 23)
       }
-    ];
-  });
+    ]
+  })
