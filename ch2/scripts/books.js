@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .controller('MyController', ['$scope', function($scope) {
     $scope.books = [
@@ -57,5 +58,5 @@ angular.module('myApp', [])
         publish: '技術評論社',
         published: new Date(2013, 10, 23)
       }
-    ];
-  }]);
+    ]
+  }])
