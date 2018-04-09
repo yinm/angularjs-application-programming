@@ -1,4 +1,5 @@
+// 2nd
 angular.module('myApp', [])
   .controller('MyController', function() {
-    this.msg = 'こんにちは、AngularJS!';
-  });
+    this.msg = 'Hello AngularJS'
+  })
