@@ -1,8 +1,9 @@
+// 2nd
 const My = ($scope, BookList) => {
-  $scope.books = BookList();
-};
+  $scope.books = BookList()
+}
 
-My.$inject = ['$scope', 'BookList'];
+My.$inject = ['$scope', 'BookList']
 
 angular.module('myApp', [])
   .controller('MyController', My)
@@ -64,6 +65,5 @@ angular.module('myApp', [])
         publish: '技術評論社',
         published: new Date(2013, 10, 23)
       }
-    ];
-  });
-
+    ]
+  })
