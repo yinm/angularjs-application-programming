@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .config(['$httpProvider', ($httpProvider) => {
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
@@ -6,7 +7,7 @@ angular.module('myApp', [])
       let query = []
 
       for (let key in data) {
-        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        query.push(`${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       }
 
       return query.join('&')
