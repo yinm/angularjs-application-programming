@@ -1,8 +1,7 @@
 angular.module('myApp', [])
   .config(['$httpProvider', ($httpProvider) => {
-    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
   }])
-
   .controller('MyController', ['$scope', '$http', ($scope, $http) => {
     $scope.onclick = () => {
       $http({
@@ -10,11 +9,11 @@ angular.module('myApp', [])
         url: 'http.php',
         params: { name: $scope.name },
       })
-      .success((data, status, headers, config) => {
-        $scope.$result = data;
-      })
-      .error((data, status, headers, config) => {
-        $scope.result = '!!通信に失敗しました!!';
-      });
-    };
-  }]);
+        .success((data, status, headers, config) => {
+          $scope.result = data
+        })
+        .error((data, status, headers, config) => {
+          $scope.result = '通信失敗'
+        })
+    }
+  }])
