@@ -9,16 +9,15 @@
 <body ng-controller="MyController">
 <form name="myForm" ng-submit="onsubmit()" novalidate>
   <div>
-    <label for="zip">郵便番号：</label>
+    <label for="zip">郵便番号：</label><br />
     <input id="zip" name="zip" type="text" ng-model="user.zip"
-      ng-pattern="/^[0-9]{3}-[0-9]{4}$/">
+      ng-pattern="/^[0-9]{3}-[0-9]{4}$/" />
     <span ng-show="myForm.zip.$error.pattern">
-      郵便番号は「999-9999」の形式で入力してください。
-    </span>
+      郵便番号は「999-9999」の形式で入力してください。</span>
   </div>
   <div>
     <input type="submit" value="登録"
-      ng-disabled="myForm.$invalid">
+      ng-disabled="myForm.$invalid" />
   </div>
 </form>
 </body>

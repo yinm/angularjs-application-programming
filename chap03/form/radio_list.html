@@ -9,12 +9,12 @@
 <body ng-controller="MyController">
 <form>
   <div>
-    書籍：<br>
+    書籍：<br />
     <label ng-repeat-start="book in books">
-      <input type="radio" ng-model="data.book" ng-value="book.isbn" id="isbn{{book.isbn}}" name="book">
-      {{book.title}}
-    </label>
-    <br ng-repeat-end>
+      <input type="radio" ng-model="data.book" 
+         ng-value="book.isbn" id="isbn{{book.isbn}}" name="book" />
+      {{book.title}}</label>
+    <br ng-repeat-end />
   </div>
   選択された値：{{data.book}}
 </form>

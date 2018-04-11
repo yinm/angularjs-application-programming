@@ -59,7 +59,7 @@ angular.module('myApp', [])
       }
     ];
 
-    $scope.myComparator = function(expected, actual) {
-      return expected.indexOf(actual) > -1;
+    $scope.myComparator = function(actual, expected) {
+      return actual.indexOf(expected) > -1;
     };
   }]);

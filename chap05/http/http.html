@@ -7,11 +7,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-mocks.js"></script>
 <script src="scripts/http.js"></script>
 </head>
-<!-- 2nd -->
 <body ng-controller="MyController">
 <form name="myForm" novalidate>
-  <label for="name">名前:</label>
-  <input id="name" name="name" type="text" ng-model="name">
+  <label for="name">名前：</label>
+  <input id="name" name="name" type="text" ng-model="name" />
   <button ng-click="onclick()">送信</button>
 </form>
 <div>{{result}}</div>

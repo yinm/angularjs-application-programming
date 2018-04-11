@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
     $scope.articles = [
       {
         title: 'サーブレット＆JSPポケットリファレンス',
@@ -16,5 +16,5 @@ angular.module('myApp', [])
         body: '忘れてしまいがちな基本情報をコンパクトなサイズに凝縮。逆引きで目的からすぐに探せて、サンプルで具体的な実装イメージをつかめます。',
         author: '高江賢'
       },
-    ]
-  }])
+    ];
+  }]);

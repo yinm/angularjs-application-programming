@@ -1,6 +1,6 @@
-// 1st
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', '$filter', function($scope, $filter) {
+  .controller('MyController',
+  ['$scope', '$filter', function($scope, $filter) {
     $scope.members = [
       { name: '鈴木太郎', role: '課長', old: 55 },
       { name: '田中一郎', role: '部長', old: 58 },

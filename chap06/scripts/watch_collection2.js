@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
     $scope.book = {
       isbn: '978-4-7741-7078-7',
       title: 'サーブレット＆JSPポケットリファレンス',
@@ -9,14 +9,14 @@ angular.module('myApp', [])
       images : [ 'cover.jpg', 'logo.jpg' ]
     };
 
-    $scope.$watchCollection('book', (newValue, oldValue, scope) => {
+    $scope.$watchCollection('book', function(newValue, oldValue, scope) {
       console.log(newValue);
     });
 
-    $scope.onclick = () => {
-      // $scope.book = {};
-      // $scope.book.title = '未定';
-      // $scope.book.author = '山田太郎';
+    $scope.onclick = function() {
+      //$scope.book = {};
+      //$scope.book.title = '未定';
+      //$scope.book.author = '山田太郎';
       $scope.book.images.push('cover2.jpg');
     };
   }]);

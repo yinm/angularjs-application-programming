@@ -8,15 +8,20 @@
 <body>
 <button id="btn">クリック</button>
 <script>
-const obj = {
+var obj = {
   title: 'AngularJSアプリケーションプログラミング',
   price: 3500,
   show: function() {
-    console.log(`${this.title} : ${this.price}`);
+    console.log(this.title + '：' + this.price);
   }
 };
+/*
+document.getElementById('btn').addEventListener('click',
+  obj.show, true);
+*/
 
-document.getElementById('btn').addEventListener('click', angular.bind(obj, obj.show), true);
+document.getElementById('btn').addEventListener('click',
+  angular.bind(obj, obj.show), true);
 </script>
 </body>
 </html>

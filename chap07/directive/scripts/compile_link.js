@@ -1,21 +1,21 @@
 angular.module('myApp', [])
-  .directive('compileLink', () => {
+  .directive('compileLink', function() {
     return {
       restrict: 'E',
-      compile: (element, attrs) => {
-        console.log(`compile: ${attrs.type}`);
-
+      //terminal: true,
+      compile: function(element, attrs) {
+        console.log('compile: ' + attrs.type);
         return {
-          pre: (scope, element, attrs, controller) => {
-            console.log(`prelink: ${attrs.type}`);
+          pre: function(scope, element, attrs, controller) {
+            console.log('prelink: ' + attrs.type);
           },
-          post: (scope, element, attrs, controller) => {
-            console.log(`postlink: ${attrs.type}`);
-          },
+          post: function(scope, element, attrs, controller) {
+            console.log('postlink: ' + attrs.type);
+          }
         };
       },
     };
   })
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
     $scope.data = ['い', 'ろ', 'は', 'に', 'ほ'];
   }]);

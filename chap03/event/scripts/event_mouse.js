@@ -1,4 +1,3 @@
-// 1st
 angular.module('myApp', [])
   .controller('MyController', ['$scope', function($scope) {
     $scope.path = 'http://www.web-deli.com/image/linkbanner_l.gif';

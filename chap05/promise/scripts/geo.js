@@ -1,25 +1,26 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', '$http', '$q', '$window', ($scope, $http, $q, $window) => {
-    $scope.onclick = () => {
-      const getGeoPosition = (success, error) => {
-        let deferred = $q.defer();
+  .controller('MyController',
+    ['$scope', '$http', '$q', '$window',
+    function($scope, $http, $q, $window) {
+    $scope.onclick = function() {
+      var getGeoPosition = function(success, error) {
+        var deferred = $q.defer();
         $window.navigator.geolocation.getCurrentPosition(
-          (pos) => {
+          function(pos) {
             return deferred.resolve(pos.coords);
           },
-          (err) => {
+          function(err) {
             return deferred.reject(err);
           }
         );
         return deferred.promise;
       };
 
-      // 動かない。APIの提供が終わってるっぽい？
-      const getSunset = (coords) => {
-        const today = new Date();
+      var getSunset = function(coords) {
+        var today = new Date();
         return $http.jsonp('http://www.finds.jp/ws/movesun.php',
           {
-            params: {
+            params : {
               jsonp: 'JSON_CALLBACK',
               lat: coords.latitude,
               lon: coords.longitude,
@@ -35,19 +36,19 @@ angular.module('myApp', [])
 
       getGeoPosition()
         .then(
-          (coords) => {
+          function(coords) {
             return getSunset(coords);
           }
         )
         .then(
-          (data) => {
-            angular.forEach(data.data.result.event, (value, index) => {
+          function(data) {
+            angular.forEach(data.data.result.event, function(value, index) {
               if (value.type === 'daytime' && value.boundary === 'end') {
                 $scope.result = new Date(value.time).toLocaleString();
               }
             });
           },
-          (err) => {
+          function(err) {
             $window.alert(err.message);
           }
         );

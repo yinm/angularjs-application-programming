@@ -1,10 +1,11 @@
 angular.module('myApp', [])
-  .directive('myHello', () => {
+  .directive('myHello', function() {
     return {
       restrict: 'E',
-      replace: true,
-      template: '<div>こんにちは、ディレクティブ！</div>',
+      //replace: true,
+      template: '<div>こんにちは、ディレクティブ！</div>'
     }
   })
-  .controller('MyController', ['$scope', ($scope) => {
+
+  .controller('MyController', ['$scope', function($scope) {
   }]);

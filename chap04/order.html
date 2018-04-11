@@ -13,8 +13,11 @@
   <tr>
     <th>書名</th><th>価格</th><th>出版社</th><th>刊行日</th>
   </tr>
-  <tr ng-repeat="book in books | orderBy: 'price': true">
-    <td><a ng-href="http://www.wings.msn.to/index.php/-/A-03/{{book.isbn}}/">{{book.title}}</a></td>
+  <tr ng-repeat="book in books | orderBy: 'price'">
+  <!--<tr ng-repeat="book in books | orderBy: '-price'">-->
+  <!--<tr ng-repeat="book in books | orderBy: 'price': true">-->
+    <td><a ng-href="http://www.wings.msn.to/index.php/-/A-03/{{book.isbn}}/">
+      {{book.title}}</a></td>
     <td>{{book.price}}円</td>
     <td>{{book.publish}}</td>
     <td>{{book.published | date}}</td>

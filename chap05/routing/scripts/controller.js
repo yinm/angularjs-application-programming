@@ -1,22 +1,25 @@
 angular.module('myApp')
-  // .controller('MainController', ['$scope', ($scope) => {
-  //   $scope.msg = 'ようこそWINGSプロジェクトへ！';
-  // }])
-
-  .controller('MainController',
-    ['$scope', '$location', ($scope, $location) => {
-      $scope.msg = 'ようこそWINGSプロジェクトへ！';
-      $scope.onclick = () => {
-        $location.path('/articles/13');
-      };
+  .controller('MainController', ['$scope', function($scope) {
+    $scope.msg = 'ようこそWINGSプロジェクトへ!';
   }])
 
+/*
+  .controller('MainController',
+  ['$scope', '$location', function($scope, $location) {
+    $scope.msg = 'ようこそWINGSプロジェクトへ!';
+    $scope.onclick = function() {
+      $location.path('/articles/13');
+    };
+  }])
+*/
+
   .controller('ResolveController',
-  ['$scope', 'CurrentPosition', ($scope, CurrentPosition) => {
+  ['$scope', 'CurrentPosition', function($scope, CurrentPosition) {
     $scope.pos = CurrentPosition;
   }])
 
-  .controller('ArticlesController', ['$scope', '$routeParams', ($scope, $routeParams) => {
+
+  .controller('ArticlesController', ['$scope', '$routeParams', function($scope, $routeParams) {
     $scope.id = $routeParams.id;
   }])
 
@@ -33,6 +36,6 @@ angular.module('myApp')
   }])
 */
 
-  .controller('SearchController', ['$scope', '$routeParams', ($scope, $routeParams) => {
+  .controller('SearchController', ['$scope', '$routeParams', function ($scope, $routeParams) {
     $scope.keyword = $routeParams.keyword;
   }]);

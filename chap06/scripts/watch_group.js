@@ -1,21 +1,29 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
     $scope.base = 0;
     $scope.height = 0;
     $scope.area = 0;
 
+/*
+    $scope.cancel =
+      $scope.$watchGroup(['base', 'height'],
+        function(newValue, oldValue, scope) {
+        scope.area = scope.base * scope.height / 2;
+      });
+*/
+
     $scope.cancel =
       $scope.$watchGroup(
         [
-          () => $scope.base,
-          () => $scope.height
+          function() { return $scope.base; },
+          function() { return $scope.height; }
         ],
-        (newValue, oldValue, scope) => {
-          scope.area = scope.base * scope.height / 2;
-        }
-      );
+        function(newValue, oldValue, scope) {
+        scope.area = scope.base * scope.height / 2;
+      });
 
-    $scope.onstop = () => {
+    $scope.onstop = function() {
       $scope.cancel();
     };
+
   }]);

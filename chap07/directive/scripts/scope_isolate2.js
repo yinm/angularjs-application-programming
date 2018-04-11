@@ -1,6 +1,5 @@
-// 2nd
 angular.module('myApp', [])
-  .directive('myHello', () => {
+  .directive('myHello', function() {
     return {
       restrict: 'E',
       replace: true,
@@ -8,14 +7,15 @@ angular.module('myApp', [])
       scope: {
         type: '=myType',
         name: '@myName',
-        click: '&myClick',
+        click: '&myClick'
       },
-      template: '<div ng-click="click()">{{type}}、{{name}}さん！</div>',
+      template: '<div ng-click="click()">{{type}}、{{name}}さん！</div>'
     }
   })
-  .controller('MyController', ['$scope', '$window', ($scope, $window) => {
-    $scope.greeting = 'おはよう';
-    $scope.onclick = () => {
+  .controller('MyController',
+  ['$scope', '$window', function($scope, $window) {
+    $scope.greeting = 'おはよう',
+    $scope.onclick = function() {
       $window.alert('クリックされました！');
-    };
+    }
   }]);

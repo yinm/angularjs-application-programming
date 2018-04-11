@@ -8,12 +8,12 @@
 </head>
 <body ng-controller="MyController">
 <form>
-  <label for="key">キー入力:</label>
-  <input id="key" name="key" ng-keydown="onkeydown($event)">
+  <label for="key">キー入力：</label>
+  <input id="key" name="key" ng-keydown="onkeydown($event)" />
 </form>
-<div ng-show="altKey">[Alt]</div>
-<div ng-show="ctrlKey">[Ctrl]</div>
-<div ng-show="shiftKey">[Shift]</div>
-<div>キーコード:{{which}}</div>
+<div ng-show="altKey">［Alt］</div>
+<div ng-show="ctrlKey">［Ctrl］</div>
+<div ng-show="shiftKey">［Shift］</div>
+<div>キーコード：{{which}}</div>
 </body>
 </html>

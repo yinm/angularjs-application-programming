@@ -1,11 +1,11 @@
-describe('myBookディレクティブのテスト', () => {
-  let element, link;
+describe('myBookディレクティブのテスト', function() {
+  var $scope, element, link;
 
   beforeEach(module('myApp.directive'));
 
   beforeEach(inject(function(_$compile_, _$rootScope_) {
-    const $compile = _$compile_;
-    const $rootScope = _$rootScope_;
+    var $compile = _$compile_;
+    var $rootScope = _$rootScope_;
 
     element = angular.element('<my-book my-book="data"></my-book>');
     link = $compile(element);
@@ -13,9 +13,9 @@ describe('myBookディレクティブのテスト', () => {
     link($scope);
   }));
 
-  it('ディレクティブの結果を確認する', () => {
-    const result = 'JavaScript本格入門（2,980円／技術評論社）';
-    const result2 = 'サーブレット＆JSPポケットリファレンス（2,680円／技術評論社）';
+  it('ディレクティブの結果を確認する', function() {
+    var result = 'JavaScript本格入門（2,980円／技術評論社）';
+    var result2 = 'サーブレット＆JSPポケットリファレンス（2,680円／技術評論社）';
 
     $scope.data = {
       title: 'JavaScript本格入門',

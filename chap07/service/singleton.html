@@ -8,15 +8,15 @@
 </head>
 <body>
 <div ng-controller="PrevController">
-  <label for="name">名前:</label>
-  <input type="text" ng-model="name">
+  <label for="name">名前：</label>
+  <input id="name" type="text" ng-model="name" />
   <button ng-click="onclick()">送信</button>
   {{shared.getMessage()}}
 </div>
-<hr>
+<hr />
 <div ng-controller="NextController">
-  <label for="name">名前:</label>
-  <input type="text" ng-model="name">
+  <label for="name">名前：</label>
+  <input id="name" type="text" ng-model="name" />
   <button ng-click="onclick()">送信</button>
   {{shared.getMessage()}}
 </div>

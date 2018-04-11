@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
     $scope.books = [
       {
         isbn: '978-4-7741-7078-7',
@@ -59,24 +59,24 @@ angular.module('myApp', [])
       }
     ];
 
-    $scope.$watch('books', (newValue, oldValue, scope) => {
-      console.log('$watch (false) ');
+    $scope.$watch('books', function(newValue, oldValue, scope) {
+      console.log('$watch（false）');
       console.log(newValue);
     });
 
-    $scope.$watchCollection('books', (newValue, oldValue, scope) => {
+    $scope.$watchCollection('books', function(newValue, oldValue, scope) {
       console.log('$watchCollection');
       console.log(newValue);
     });
 
-    $scope.$watch('books', (newValue, oldValue, scope) => {
-      console.log('$watch (true) ');
+    $scope.$watch('books', function(newValue, oldValue, scope) {
+      console.log('$watch（true）');
       console.log(newValue);
     }, true);
 
-    $scope.onclick = () => {
-      // $scope.books = [];
-      // $scope.books.pop();
-      $scope.books[0].title = '未定';
+    $scope.onclick = function() {
+      $scope.books = [];
+      //$scope.books.pop();
+      //$scope.books[0].title = '未定';
     };
   }]);

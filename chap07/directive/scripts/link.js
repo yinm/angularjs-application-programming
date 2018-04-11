@@ -1,25 +1,25 @@
 angular.module('myApp', [])
-  .directive('myImageBtn', () => {
+  .directive('myImageBtn', function() {
     return {
       restrict: 'E',
       replace: true,
       scope: {
         preSrc: '@',
-        postSrc: '@',
+        postSrc: '@'
       },
-      template: '<img src="{{src}}" ng-mouseenter="onenter()" ng-mouseleave="onleave()">',
-      link: (scope, element, attrs, controller) => {
+      template: '<img src="{{src}}" ng-mouseenter="onenter()" ng-mouseleave="onleave()" />',
+      link: function(scope, element, attrs, controller) {
         scope.src = scope.preSrc;
 
-        scope.onenter = () => {
-          scope.src = scope.postSrc;
+        scope.onenter = function() {
+           scope.src = scope.postSrc;
+        };
+        scope.onleave = function() {
+           scope.src = scope.preSrc;
         };
 
-        scope.onleave = () => {
-          scope.src = scope.preSrc;
-        };
-      },
+      }
     }
   })
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
   }]);

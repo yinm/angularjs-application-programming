@@ -1,6 +1,6 @@
 angular.module('myApp', [])
-  .filter('percent', ['$filter', ($filter) => {
-    return (value, fraction) => {
+  .filter('percent', ['$filter', function ($filter){
+    return function(value, fraction) {
       if (!angular.isNumber(value)) {
         return value;
       }

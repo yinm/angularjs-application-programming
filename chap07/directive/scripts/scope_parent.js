@@ -1,22 +1,21 @@
-// 2nd
 angular.module('myApp', [])
-  .directive('myScope', () => {
+  .directive('myScope', function() {
     return {
       restrict: 'E',
       replace: true,
       scope: true,
-      controller: ['$scope', ($scope) => {
-        $scope.onchild = () => {
+      controller: [ '$scope', function($scope) {
+        $scope.onchild = function() {
           $scope.value++;
         };
       }],
       template: '<div><button ng-click="onchild()">加算</button>' +
-        '{{value}}</div>',
+        '{{value}}</div>'
     }
   })
-  .controller('MyController', ['$scope', ($scope) => {
+  .controller('MyController', ['$scope', function($scope) {
     $scope.value = 10;
-    $scope.onparent = () => {
+    $scope.onparent = function() {
       $scope.value++;
     };
   }]);

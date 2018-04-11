@@ -1,15 +1,12 @@
-// 1st
 angular.module('myApp', [])
   .controller('MyController', ['$scope', function($scope) {
     $scope.data = { book: { } };
-
     $scope.onchange = function() {
       for (var i = 0; i < $scope.books.length; i++) {
         var isbn = $scope.books[i].isbn;
         $scope.data.book[isbn] = $scope.all;
       }
     };
-
     $scope.books = [
       {
         isbn: '978-4-7741-7078-7',

@@ -63,11 +63,12 @@ var books = [
   }
 ];
 
-let result = [];
+var result = [];
 
 angular.forEach(books, function(value, index, ary) {
-  this.push(`${index}. ${value.title}`);
+  this.push(index + '. ' + value.title);
 }, result);
+
 console.log(result);
 </script>
 </head>

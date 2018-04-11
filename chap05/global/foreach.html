@@ -63,9 +63,8 @@ var books = [
   }
 ];
 
-// 2nd
-angular.forEach(books, (value, index, ary) => {
-  console.log(`${index}. ${value.title}`);
+angular.forEach(books, function(value, index, ary) {
+  console.log(index + '. ' + value.title);
 });
 </script>
 </head>

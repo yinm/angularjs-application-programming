@@ -1,35 +1,36 @@
-angular.module('myApp', ['ngRoute'])
-  .factory('MyPosition', ['$q', '$window', ($q, $window) => {
-    const deferred = $q.defer();
+angular.module('myApp', [ 'ngRoute' ])
+  .factory('MyPosition', ['$q', '$window', function($q, $window) {
+    var deferred = $q.defer();
     $window.navigator.geolocation.getCurrentPosition(
-      (pos) => {
+      function(pos) {
         return deferred.resolve(pos.coords);
       }
     );
     return deferred.promise;
   }])
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainController',
+        controller: 'MainController'
       })
       .when('/resolve', {
         templateUrl: 'views/resolve.html',
         controller: 'ResolveController',
         resolve: {
           CurrentPosition: 'MyPosition'
-        },
+        }
       })
       .when('/articles/:id', {
         templateUrl: 'views/articles.html',
-        controller: 'ArticlesController',
+        controller: 'ArticlesController'
       })
-      .when('/search/keyword+', {
+      .when('/search/:keyword*', {
         templateUrl: 'views/search.html',
-        controller: 'SearchController',
+        controller: 'SearchController'
       })
       .otherwise({
         redirectTo: '/'
       });
   }]);
+

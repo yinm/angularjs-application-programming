@@ -1,4 +1,3 @@
-// 1st
 angular.module('myApp', [])
   .controller('MyController', ['$scope', function($scope) {
     $scope.years = [ '子', '丑', '寅', '卯', '辰', '巳',

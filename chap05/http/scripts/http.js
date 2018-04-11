@@ -1,16 +1,21 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', '$http', ($scope, $http) => {
-    $scope.onclick = () => {
+  .controller('MyController', ['$scope', '$http', function($scope, $http) {
+    $scope.onclick = function() {
       $http({
-        method: 'POST',
+        method: 'GET',
         url: 'http.php',
-        data: { name: $scope.name },
+        params: { name: $scope.name }
+
+        // method: 'POST',
+        // url: 'http.php',
+        // data: { name: $scope.name }
       })
-        .success((data, status, headers, config) => {
-          $scope.result = data
-        })
-        .error((data, status, headers, config) => {
-          $scpoe.result = '通信失敗'
-        })
-    }
-  }])
+      .success(function(data, status, headers, config){
+        $scope.result = data;
+      })
+      .error(function(data, status, headers, config){
+        $scope.result = '!!通信に失敗しました!!';
+      });
+    };
+  }]);
+

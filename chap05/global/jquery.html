@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app ng-jq>
 <head>
 <meta charset="UTF-8" />
 <title>AngularJS</title>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 </head>
 <body>
@@ -18,13 +18,10 @@
   <li>iPhone／iPad開発ポケットリファレンス</li>
 </ul>
 <script>
-let result = [];
-const elm = angular.element(document.getElementById('php'));
-
-for(let prop in elm) {
-  if (angular.isFunction(elm[prop])) {
-    result.push(prop);
-  }
+var result = [];
+var elm = angular.element(document.getElementById('php'));
+for(var prop in elm) {
+  if (angular.isFunction(elm[prop])) { result.push(prop); }
 }
 console.log(result);
 </script>
