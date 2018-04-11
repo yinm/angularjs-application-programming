@@ -1,4 +1,3 @@
-// 2nd
 angular.module('myApp', [])
   .controller('MyController', ['$scope', '$http', ($scope, $http) => {
     $scope.onclick = () => {
@@ -11,19 +10,19 @@ angular.module('myApp', [])
           }
         }
       )
-      .success((data) => {
-        let comments = [];
-        $scope.count = data.count + '件';
-        angular.forEach(data.bookmarks, (value, index) => {
-          if (value.comment !== '') {
-            comments.push(value.comment)
-          }
-        });
-        $scope.comments = comments;
-      })
-      .error((err) => {
-        $scope.count = '(エラー)';
-        $scope.comments = ['(エラー)'];
-      });
-    };
-  }]);
+        .success((data) => {
+          let comments = []
+          $scope.count = data.count + '件'
+          angular.forEach(data.bookmarks, (value, index) => {
+            if (value.comment !== '') {
+              comments.push(value.comment)
+            }
+          })
+          $scope.comments = comments
+        })
+        .error((err) => {
+          $scope.count = '(error)'
+          $scope.comments = ['(error)']
+        })
+    }
+  }])
