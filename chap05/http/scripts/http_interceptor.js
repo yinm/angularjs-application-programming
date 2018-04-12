@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', [])
   .config(['$httpProvider', ($httpProvider) => {
     $httpProvider.interceptors.push(
@@ -50,4 +51,3 @@ angular.module('myApp', [])
         })
     }
   }])
-
