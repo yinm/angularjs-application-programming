@@ -4,7 +4,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 try {
     $db = new PDO('mysql:host=localhost;dbname=angular;charset=utf8', 'angusr', 'angpass');
 
-    switch ($_SERVER['REQEST_METHOD']) {
+    switch ($_SERVER['REQUEST_METHOD']) {
         case 'GET':
             if (is_null($_SERVER['PATH_INFO'])) {
                 $stt = $db->query('select * from books order by published desc');
