@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', ['ngResource'])
   .controller('MyController',
     ['$scope', '$resource', ($scope, $resource) => {
@@ -39,4 +40,5 @@ angular.module('myApp', ['ngResource'])
           }
         )
       }
-    }])
+    }]
+  )
