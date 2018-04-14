@@ -3,6 +3,7 @@ angular.module('myApp', [])
     $scope.onclick = () => {
       const getGeoPosition = (success, error) => {
         const deferred = $q.defer()
+
         $window.navigator.geolocation.getCurrentPosition(
           (pos) => {
             return deferred.resolve(pos.coords)
@@ -11,13 +12,13 @@ angular.module('myApp', [])
             return deferred.reject(err)
           }
         )
-        deferred.resolve('a')
 
         return deferred.promise
       }
 
       const getSunset = (coords) => {
         const deferred = $q.defer()
+
         const stub = {
           data: {
             result: {
@@ -35,24 +36,6 @@ angular.module('myApp', [])
         deferred.resolve(stub)
 
         return deferred.promise
-
-        // APIがサービス終了してそうだったので、コメントアウト
-        // const today = new Date()
-        // return $http.jsonp('http://www.finds.jp/ws/movesun.php',
-        //   {
-        //     params: {
-        //       jsonp: 'JSON_CALLBACK',
-        //       lat: coords.latitude,
-        //       lon: coords.longitude,
-        //       y: today.getFullYear(),
-        //       m: today.getMonth() + 1,
-        //       d: today.getDate(),
-        //       tz: 9.0,
-        //       e: 0
-        //     }
-        //   }
-        // )
-        // }
       }
 
       getGeoPosition()
