@@ -1,9 +1,7 @@
 angular.module('myApp', [])
-  /*
-    .config(function($locationProvider){
-       $locationProvider.hashPrefix('!');
-    })
-  */
+  .config(['$locationProvider', ($locationProvider) => {
+    $locationProvider.hashPrefix('!')
+  }])
 
   .controller('MyController', ['$scope', '$location', ($scope, $location) => {
     $scope.onClick = () => {
