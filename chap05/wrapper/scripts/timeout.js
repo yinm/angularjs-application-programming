@@ -4,7 +4,7 @@ angular.module('myApp', [])
       $scope.greeting = 'Hello World'
     }, 5000)
 
-    $scope.onclick = function() {
-      $timeout.cancel(timer);
-    };
+    $scope.onClick = () => {
+      $timeout.cancel(timer)
+    }
   }])
