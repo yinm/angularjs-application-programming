@@ -5,19 +5,20 @@
 <title>AngularJS</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script>
-var $injector = angular.injector(['ng']);
-$injector.invoke(['$http', function($http) {
+const $injector = angular.injector(['ng'])
+$injector.invoke(['$http', ($http) => {
   $http({
     method: 'GET',
     url: 'injector.txt'
   })
-  .success(function(data, status, headers, config){
-    console.log(data);
-  })
-  .error(function(data, status, headers, config){
-    console.log('!!通信に失敗しました!!');
-  }); 
-}]);
+    .success((data, status, headers, config) => {
+      console.log(data)
+    })
+    .error((data, status, headers, config) => {
+      console.log('通信失敗')
+    })
+}])
+
 </script>
 </head>
 <body>
