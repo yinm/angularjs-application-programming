@@ -4,10 +4,17 @@ angular.module('myApp')
   // }])
   //
 
-  .controller('MainController', ['$scope', '$location', ($scope, $location) => {
-    $scope.msg = 'ようこそ'
+  // .controller('MainController', ['$scope', '$location', ($scope, $location) => {
+  //   $scope.msg = 'ようこそ'
+  //   $scope.onClick = () => {
+  //     $location.path('/articles/13')
+  //   }
+  // }])
+
+  .controller('MainController', ['$scope', '$window', ($scope, $window) => {
+    $scope.msg = '$window'
     $scope.onClick = () => {
-      $location.path('/articles/13')
+      $window.location.href = 'route.html#/articles/13'
     }
   }])
 
