@@ -5,6 +5,7 @@
 <title>AngularJS</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script>
+// 2nd
 const $injector = angular.injector(['ng'])
 $injector.invoke(['$http', ($http) => {
   $http({
@@ -18,7 +19,6 @@ $injector.invoke(['$http', ($http) => {
       console.log('通信失敗')
     })
 }])
-
 </script>
 </head>
 <body>
