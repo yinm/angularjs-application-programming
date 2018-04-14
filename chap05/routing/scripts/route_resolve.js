@@ -1,14 +1,16 @@
-angular.module('myApp', [ 'ngRoute' ])
-  .factory('MyPosition', ['$q', '$window', function($q, $window) {
-    var deferred = $q.defer();
+angular.module('myApp', ['ngRoute'])
+  .factory('MyPosition', ['$q', '$window', ($q, $window) => {
+    let deferred = $q.defer()
     $window.navigator.geolocation.getCurrentPosition(
-      function(pos) {
-        return deferred.resolve(pos.coords);
+      (pos) => {
+        return deferred.resolve(pos.coords)
       }
-    );
-    return deferred.promise;
+    )
+
+    return deferred.promise
   }])
-  .config(['$routeProvider', function ($routeProvider) {
+
+  .config(['$routeProvider', ($routeProvider) => {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -31,6 +33,5 @@ angular.module('myApp', [ 'ngRoute' ])
       })
       .otherwise({
         redirectTo: '/'
-      });
-  }]);
-
+      })
+  }])
