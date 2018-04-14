@@ -11,8 +11,7 @@ angular.module('myApp', [])
           } else {
             deferred.resolve(`入力値は${value}`)
           }
-        }
-      , 1000)
+        }, 1000)
 
       return deferred.promise
     }
@@ -24,10 +23,13 @@ angular.module('myApp', [])
     ])
       .then(
         (resolve) => {
-           console.log(resolve)
+          console.log(resolve)
         },
         (reject) => {
           console.log(reject)
+        },
+        (notify) => {
+          console.log(notify)
         }
       )
   }])
