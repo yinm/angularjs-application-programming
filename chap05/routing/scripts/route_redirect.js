@@ -1,13 +1,13 @@
 angular.module('myApp', [ 'ngRoute' ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', ($routeProvider) => {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainController'
       })
       .when('/books/:id', {
-        redirectTo: function(routeParams, path, search) {
-          return '/articles/' + (Number(routeParams.id) + 10000) ;
+        redirectTo(routeParams, path, search) {
+          return `/articles/${(Number(routeParams.id) + 10000)}`
         }
       })
       .when('/articles/:id', {
@@ -20,5 +20,5 @@ angular.module('myApp', [ 'ngRoute' ])
       })
       .otherwise({
         redirectTo: '/'
-      });
-  });
+      })
+  }])
