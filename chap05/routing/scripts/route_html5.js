@@ -1,7 +1,6 @@
-angular.module('myApp', [ 'ngRoute' ])
-.config(['$routeProvider', '$locationProvider',
-  function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+angular.module('myApp', ['ngRoute'])
+  .config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
+    $locationProvider.html5Mode(true)
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -17,5 +16,5 @@ angular.module('myApp', [ 'ngRoute' ])
       })
       .otherwise({
         redirectTo: '/'
-      });
-  }]);
+      })
+  }])
