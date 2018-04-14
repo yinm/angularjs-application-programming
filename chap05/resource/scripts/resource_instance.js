@@ -1,3 +1,4 @@
+// 2nd
 angular.module('myApp', ['ngResource'])
   .controller('MyController',
     ['$scope', '$resource', ($scope, $resource) => {
@@ -8,26 +9,26 @@ angular.module('myApp', ['ngResource'])
       )
       $scope.books = Book.query()
 
-      let b = Book.get({ isbn: '978-4-7741-7078-7' }, () => {
-        b.title = 'サーバサイドJavaポケットリファレンス'
-        b.$update(() => {
+      const book1 = Book.get({ isbn: '978-4-7741-7078-7' }, () => {
+        book1.title = 'サーバーサイド'
+        book1.$update(() => {
           $scope.books = Book.query()
         })
       })
 
       Book.get({ isbn: '978-4-7741-7078-7' }, (b) => {
-        b.title = 'サーバサイドJavaポケットリファレンス'
+        b.title = 'サーバーサイドfooobar'
         b.$update(() => {
           $scope.books = Book.query()
         })
       })
 
-      boook = new Book({ isbn: '978-4-7741-9999-0' })
-      boook.title = 'AngularJSポケットリファレンス'
-      boook.price = 3000
-      boook.publish = '技術評論社'
-      boook.published = '2015-10-10'
-      boook.$save(() => {
+      const book2 = new Book({ isbn: '978-4-7741-9999-0' })
+      book2.title = 'Angular'
+      book2.price = 3000
+      book2.publish = 'foo'
+      book2.published = '2015-10-10'
+      book2.$save(() => {
         $scope.books = Book.query()
       })
 
@@ -61,4 +62,6 @@ angular.module('myApp', ['ngResource'])
           }
         )
       }
-  }])
+
+    }]
+  )
