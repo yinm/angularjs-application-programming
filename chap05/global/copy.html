@@ -5,17 +5,17 @@
 <title>AngularJS</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script>
-var authors1 = ['山田太郎', '佐藤次郎', '鈴木三郎'];
-var authors2 = ['山田さくら', '佐藤もも', '鈴木うめ', '田中ぼたん'];
+const authors1 = ['山田太郎', '佐藤次郎', '鈴木三郎'];
+const authors2 = ['山田さくら', '佐藤もも', '鈴木うめ', '田中ぼたん'];
 
-var book1 ={
+const book1 ={
   isbn: '978-4-7741-7078-7',
   title: 'サーブレット＆JSPポケットリファレンス',
   price: 2680,
   publish: '技術評論社'
 };
 
-var book2 ={
+const book2 ={
   isbn: '978-4-7741-XXXX-X',
   title: '未定',
   price: 2680,
@@ -23,20 +23,20 @@ var book2 ={
   cdrom: false
 };
 
-console.log('引数dest（コピー前）：');
-console.log(book2);
-console.log(authors2);
+console.log('引数dest (コピー前) :')
+console.log(book2)
+console.log(authors2)
 
-var result_book = angular.copy(book1, book2);
-var result_authors = angular.copy(authors1, authors2);
+const resultBook = angular.copy(book1, book2)
+const resultAuthors = angular.copy(authors1, authors2)
 
-console.log('copyメソッドの戻り値：');
-console.log(result_book);
-console.log(result_authors);
+console.log('copyメソッドの戻り値:')
+console.log(resultBook)
+console.log(resultAuthors)
 
-console.log('引数dest（コピー後）：');
-console.log(book2);
-console.log(authors2);
+console.log('引数dest (コピー後) :')
+console.log(book2)
+console.log(authors2)
 </script>
 </head>
 <body>
