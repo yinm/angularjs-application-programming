@@ -1,16 +1,17 @@
+// 2nd
 angular.module('myApp', [])
   .value('birth', new Date(2007, 5, 25))
 
-const Animal = (name, birth, $log) => {
+const Animal = function(name, birth, $log) {
   this.name = name
   this.birth = birth
-  this.output = () => {
-    $log.info(`${name}:${birth.toLocalString()}`)
+  this.output = function() {
+    $log.info(`${name}:${birth.toLocaleString()}`)
   }
 }
 
 const $injector = angular.injector(['ng', 'myApp'])
-const ani = $injector.instance(
+const ani = $injector.instantiate(
   ['name', 'birth', '$log', Animal], { name: 'ウタ' }
 )
 
