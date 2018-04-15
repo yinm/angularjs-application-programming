@@ -5,7 +5,7 @@
 <title>AngularJS</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script>
-var books = [
+const books = [
   {
     isbn: '978-4-7741-7078-7',
     title: 'サーブレット＆JSPポケットリファレンス',
@@ -63,9 +63,9 @@ var books = [
   }
 ];
 
-angular.forEach(books, function(value, index, ary) {
-  console.log(index + '. ' + value.title);
-});
+angular.forEach(books, (value, index, array) => {
+  console.log(`${index}. ${value.title}`)
+})
 </script>
 </head>
 <body>
