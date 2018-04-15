@@ -9,10 +9,10 @@
 <!--AngularJSを利用したページ-->
 {{3 + 5}}
 <script>
-angular.element(document).ready(function() {
-  angular.module('myApp', []);
-  angular.bootstrap(document.getElementById('my'), ['myApp']);
-});
+angular.element(document).ready(() => {
+  angular.module('myApp', [])
+  angular.bootstrap(document.getElementById('my'), ['myApp'])
+})
 </script>
 </body>
 </html>
