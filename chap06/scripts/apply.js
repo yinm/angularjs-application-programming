@@ -1,20 +1,16 @@
 angular.module('myApp', [])
-  .controller('MyController',
-  ['$scope', '$window', function($scope, $window) {
+  .controller('MyController', ['$scope', '$window', ($scope, $window) => {
     $window.navigator.geolocation.watchPosition(
-      function(pos) {
-        // $scope.latitude = pos.coords.latitude;
-        // $scope.longitude = pos.coords.longitude;
-
+      (pos) => {
         if (!$scope.$$phase) {
-          $scope.$apply(function(scope) {
-            scope.latitude = pos.coords.latitude;
-            scope.longitude = pos.coords.longitude;
-          });
+          $scope.$apply((scope) => {
+            scope.latitude = pos.coords.latitude
+            scope.longitude = pos.coords.longitude
+          })
         }
       },
-      function(e) {
-        $window.alert(e.message);
+      (e) => {
+        $window.alert(e.message)
       }
-    );
-  }]);
+    )
+  }])
