@@ -1,15 +1,14 @@
 angular.module('myApp', [])
-  .controller('MyController', ['$scope', '$window', '$timeout', function($scope, $window, $timeout) {
+  .controller('MyController', ['$scope', '$window', '$timeout', ($scope, $window, $timeout) => {
     $window.navigator.geolocation.watchPosition(
-      function(pos) {
-        $timeout(function() {
-          $scope.latitude = pos.coords.latitude;
-          $scope.longitude = pos.coords.longitude;
-        });
+      (pos) => {
+        $timeout(() => {
+          $scope.latitude = pos.coords.latitude
+          $scope.longitude = pos.coords.longitude
+        })
       },
-      function(e) {
-        console.log(e.message);
+      (e) => {
+        console.log(e.message)
       }
-    );
-  }]);
-
+    )
+  }])
