@@ -7,14 +7,14 @@
 <script src="scripts/event2.js"></script>
 </head>
 <body>
-  <div ng-controller="PrevController">
-    <label for="name">名前：</label>
-    <input id="name" type="text" ng-model="name" />
-    <button ng-click="onclick()">送信</button>
-  </div>
-  <hr />
-  <div ng-controller="NextController">
-    {{result}}
-  </div>
+<div ng-controller="PrevController">
+  <label for="name">name:</label>
+  <input id="name" type="text" ng-model="name">
+  <button ng-click="onclick()">submit</button>
+</div>
+<hr>
+<div ng-controller="NextController">
+  {{result}}
+</div>
 </body>
 </html>
