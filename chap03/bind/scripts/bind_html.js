@@ -1,7 +1,7 @@
-angular.module('myApp', [ 'ngSanitize' ])
-  .controller('MyController', ['$scope', function($scope) {
+angular.module('myApp', ['ngSanitize'])
+  .controller('MyController', ['$scope', ($scope) => {
     $scope.memo = '<p onmouseover="alert(\'OK!\')">ようこそ</p>'
-                  + '<a href="http://www.wings.msn.to">WINGSへ</a>'
-                  + '<script>var x = 1;</script>'
-                  + '<button>応募</button>';
-  }]);
+      + '<a href="http://www.wings.msn.to">WINGSへ</a>'
+      + '<script>var x = 1;</script>'
+      + '<button>応募</button>';
+  }])
