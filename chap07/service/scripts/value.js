@@ -1,12 +1,9 @@
 angular.module('myApp', [])
-/*
-  .config(['AppTitle', 'AppInfo', 'CommonProc',
-    function(AppTitle, AppInfo, CommonProc) {
-    console.log(AppTitle);
-    console.log(AppInfo);
-    CommonProc(AppInfo.author);
+  .config(['AppTitle', 'AppInfo', 'CommonProc', (AppTitle, AppInfo, CommonProc) => {
+    console.log(AppTitle)
+    console.log(AppInfo)
+    CommonProc(AppInfo.author)
   }])
-*/
 
   .value('AppTitle', 'AngularJSプログラミング')
   .value('AppInfo', {
