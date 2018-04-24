@@ -1,15 +1,16 @@
-angular.module('myApp', [])
-  .service('SharedService', function() {
-    const MyService = function() {
-      this.name = '権兵衛'
-      this.getMessage = () => {
-        return `こんにちは、${this.name}さん！`
-      }
-    }
+class MyService {
+  constructor() {
+    this.name = '権兵衛'
+  }
 
-    return () => {
-      return new MyService()
-    }
+  getMessage() {
+    return `こんにちは、${this.name}さん！`
+  }
+}
+
+angular.module('myApp', [])
+  .service('SharedService', () => {
+    return () => new MyService()
   })
   .controller('PrevController', ['$scope', 'SharedService', ($scope, SharedService) => {
     let svc = SharedService()
