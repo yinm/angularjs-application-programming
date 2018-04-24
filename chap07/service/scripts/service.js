@@ -1,24 +1,40 @@
+class FigureService {
+  constructor($log) {
+    this.$log = $log
+  }
+
+  triangle(base, height) {
+    this.$log.info(`[triangle] base: ${base}`)
+    this.$log.info(`[triangle] height: ${height}`)
+
+    return base * height / 2
+  }
+
+  circle(radius) {
+    this.$log.info(`[circle] radius: ${radius}`)
+
+    return radius * radius * Math.PI
+  }
+
+  trapezoid(upper, lower, height) {
+    this.$log.info(`[trapezoid] upper: ${upper}`)
+    this.$log.info(`[trapezoid] lower: ${lower}`)
+    this.$log.info(`[trapezoid] height: ${height}`)
+
+    return (upper + lower) * height / 2
+  }
+}
+
+class MyController {
+  constructor(FigureService) {
+    this.FigureService = FigureService
+
+    this.triangle = this.FigureService.triangle(4, 3)
+    this.circle = this.FigureService.circle(5)
+    this.trapezoid = this.FigureService.trapezoid(5, 10, 3)
+  }
+}
+
 angular.module('myApp', [])
-  .service('FigureService', ['$log', function($log) {
-    this.triangle = function(base, height) {
-      $log.info('［triangle］底辺：' + base);
-      $log.info('［triangle］高さ：' + height);
-      return base * height / 2;
-    };
-    this.circle = function(radius) {
-      $log.info('［circle］半径：' + radius);
-      return radius * radius * Math.PI;
-    };
-    this.trapezoid = function(upper, lower, height) {
-      $log.info('［trapezoid］上辺：' + upper);
-      $log.info('［trapezoid］下辺：' + lower);
-      $log.info('［trapezoid］高さ：' + height);
-      return (upper + lower) * height / 2;
-    };
-  }])
-  .controller('MyController', ['$scope', 'FigureService',
-    function($scope, FigureService) {
-    $scope.triangle = FigureService.triangle(4, 3);
-    $scope.circle = FigureService.circle(5);
-    $scope.trapezoid = FigureService.trapezoid(5, 10, 3);
-  }]);
+  .service('FigureService', ['$log', ($log) => new FigureService($log)])
+  .controller('MyController', ['FigureService', (FigureService) => new MyController(FigureService)])
