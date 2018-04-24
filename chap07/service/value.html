@@ -7,11 +7,11 @@
 <script src="scripts/value.js"></script>
 </head>
 <body ng-controller="MyController">
-<ul>
-  <li>タイトル：{{title}}</li>
-  <li>著者：{{info.author}}</li>
-  <li>最終更新日：{{info.updated.toLocaleDateString()}}</li>
-</ul>
-<button ng-click="proc(title)">ログ出力</button>
+  <ul>
+    <li>title: {{title}}</li>
+    <li>author: {{info.author}}</li>
+    <li>last updated: {{info.updated.toLocaleString()}}</li>
+  </ul>
+  <button ng-click="proc(title)">logging</button>
 </body>
 </html>
