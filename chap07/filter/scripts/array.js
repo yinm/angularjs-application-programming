@@ -1,22 +1,24 @@
 angular.module('myApp', [])
-  .filter('grep', function (){
-    return function(values, callback) {
+  .filter('grep', () => {
+    return (values, callback) => {
       if (!angular.isArray(values)) {
-        return values;
+        return values
       }
-      var result = [];
-      angular.forEach(values, function(value) {
+
+      let result = []
+      angular.forEach(values, (value) => {
         if (callback(value)) {
-          result.push(value);
+          result.push(value)
         }
-      });
-      return result;
+      })
+
+      return result
     }
   })
-  .controller('MyController', ['$scope', function($scope) {
-    $scope.data = [ 'あいうえお', 'かきくけ', 'さしす', 'たちつてと', 'な' ];
+  .controller('MyController', ['$scope', ($scope) => {
+    $scope.data = ['あいうえお', 'かきくけ', 'さしす', 'たちつてと', 'な']
 
-    $scope.myFilter = function(value) {
-      return String(value).length < 5;
-    };
-  }]);
+    $scope.myFilter = (value) => {
+      return String(value).length < 5
+    }
+  }])
