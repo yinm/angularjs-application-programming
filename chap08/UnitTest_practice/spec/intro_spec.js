@@ -4,6 +4,6 @@ describe('Jasmineの基本', () => {
 
   it('基本テスト', () => {
     expect(1 + 1).toEqual(2)
-    expect(1 + 1).not.toEqual(2)
+    // expect(1 + 1).not.toEqual(2)
   })
 })
